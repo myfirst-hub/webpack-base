@@ -32,7 +32,16 @@ module.exports = {
     })
   ],
   module: { // 模块
-    rules: [ 
+    rules: [ //loader 默认是从右向左，从下向上执行
+      // {
+      //   test: /\.js$/,
+      //   use: {
+      //     loader: 'eslint-loader',
+      //     options: {
+      //       enforce: 'pre' // pre(previous) 表示该loader最早执行  post 表示该loader最后执行  默认无值按照正常顺序执行
+      //     } 
+      //   }
+      // },
       {
         test: /\.js$/,
         use: {
@@ -48,7 +57,7 @@ module.exports = {
             ]
           }
         },
-        // include: path.resolve(__dirname, 'src'),
+        include: path.resolve(__dirname, 'src'),
         exclude: /node_modules/
       },
       // 规则 css-loader 解析@import这种语法的

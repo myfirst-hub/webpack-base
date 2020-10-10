@@ -32,6 +32,9 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.11.2"
+    "@babel/polyfill": "^7.11.5",
+    "@babel/runtime": "^7.11.2",
+    "eslint": "^7.11.0",
+    "eslint-loader": "^4.0.2"
   }
 }
