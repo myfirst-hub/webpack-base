@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js",
+    "clear": "rimraf bundle",
+    "build": "npm run clear && webpack --config webpack.config.js",
     "dev": "webpack-dev-server"
   },
   "author": "sun",
@@ -27,6 +28,7 @@
     "mini-css-extract-plugin": "^0.11.2",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss-loader": "^4.0.2",
+    "rimraf": "^3.0.2",
     "style-loader": "^1.2.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^4.1.1",
