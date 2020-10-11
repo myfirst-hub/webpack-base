@@ -1,0 +1,11 @@
+@import './a.css';
+
+body{
+  background-color: red;
+}
+/* // 2）在css引入background('url')*/
+div{
+  width: 750px;
+  height: 390px;
+  background-image: url('./logo.png');
+}
