@@ -1,5 +1,11 @@
 let path = require('path');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
+// 1) cleanWebpackPlugin 清空之前打包的内容
+// 2) copyWebpackPlugin 复制文件到打包目录中
+// 3) bannerPlugin 内置 在打包后的js文件头部增加注释
+let { CleanWebpackPlugin } = require('clean-webpack-plugin');
+let CopyPlugin = require('copy-webpack-plugin');
+let webpack = require('webpack');
 
 module.exports = {
   mode: 'production',
@@ -16,6 +22,7 @@ module.exports = {
   // devtool: 'cheap-module-source-map',
   // 4）不会产生文件 集成在打包后的文件中 不会产生列
   // devtool: 'cheap-module-eval-source-map',
+
   watch: true, // 监控实时进行打包
   watchOptions: {
     poll: 100, // 每秒 问我100次
@@ -40,5 +47,12 @@ module.exports = {
       template: './index.html',
       filename: 'index.html',
     }),
+    new CleanWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [
+        {from: './doc', to: './'}
+      ]
+    }),
+    new webpack.BannerPlugin('make 2020 by sun')
   ]
 }
