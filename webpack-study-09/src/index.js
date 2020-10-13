@@ -1,3 +1,6 @@
+import 'bootstrap';
+import './style'
+
 let xhr = new XMLHttpRequest();
 
 xhr.open('GET', '/api/user', true);
