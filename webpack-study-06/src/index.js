@@ -18,7 +18,7 @@ document.body.appendChild(image);
 
 // import $ from 'expose-loader?$!jquery'; //3)
 // expose-loader 暴露全局的loader 内联的loader
-// pre 前面执行的loader  normal 普通的loader   post 后置的loader   内联的loader
+// pre 前面执行的loader  normal 普通的loader  内联的loader   post 后置的loader 
 // console.log('$...........', $);
 // console.log('window.$.........', window.$);
 // console.log('window.jQuery.........', window.jQuery);
