@@ -11,7 +11,14 @@ module.exports = {
   output: {
     // [name] home, other
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: 'public',
+  },
+  devServer: {
+    host: '0.0.0.0',
+    compress: true,
+    port: '8888',
+    contentBase: path.join(__dirname, './dist'),
   },
   plugins:[
     new HtmlWebpackPlugin({
